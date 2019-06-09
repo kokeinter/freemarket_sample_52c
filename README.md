@@ -13,20 +13,32 @@
 | last_name | string | null: false | <!-- 名 -->
 | kana_first_name | string | null: false | <!-- 姓カナ -->
 | kana_last_name | string | null: false | <!-- 名カナ -->
-| birthday | integer | null: false | <!-- 生年月日 -->
-| post_id | integer | null: false | <!-- 郵便番号 -->
-| prefecture | string | null: false | <!-- 都道府県 -->
-| city | string | null: false | <!-- 市区町村 -->
-| address | string | null: false | <!-- 番地 -->
-| building | string | | <!-- 建物名 -->
+| birthday_year | integer | null: false | <!-- 年 -->
+| birthday_month | integer | null: false | <!-- 月 -->
+| birthday_day | integer | null: false | <!-- 日 -->
 | tel | integer | unique: true | <!-- 電話番号 -->
 
 #### Association
+* has_one :adress, dependent: :destroy
 * has_many :comments, dependent: :destroy
 * has_many :likes, dependent: :destroy
 * has_many :points, dependent: :destroy
 * has_many :creditcards, dependent: :destroy
 * has_many :items, dependent: :destroy
+
+
+## addressesテーブル
+***
+| Column | Type | Options |
+| ------ | ---- | ------- |
+| post_id | integer | null: false | <!-- 郵便番号 -->
+| prefecture | string | null: false | <!-- 都道府県 -->
+| city | string | null: false | <!-- 市区町村 -->
+| address | string | null: false | <!-- 番地 -->
+| building | string | | <!-- 建物名 -->
+
+#### Association
+* belongs_to :user
 
 
 ### comentsテーブル
@@ -70,7 +82,7 @@
 * has_many :items
 
 <!-- ジャンル3階層目 -->
-### third_genreテーブル
+### third_genresテーブル
 ***
 
 | Column | Type | Options |
