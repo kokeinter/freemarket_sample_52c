@@ -138,7 +138,7 @@
 
 
 #### Association
-* belongs_to:user
+* belongs_to :user
 
 
 ### itemsテーブル
@@ -183,7 +183,7 @@
 
 
 #### Association
-* belongs_to:item
+* belongs_to :item
 * belongs_to :saler, class_name: "User" <!-- ユーザーテーブルのidとitemsテーブルのsaler_idが紐づく -->
 * belongs_to :buyer, class_name: "User" <!-- ユーザーテーブルのidとitemsテーブルのbuyer_idが紐づく -->
 
@@ -200,6 +200,6 @@
 
 
 #### Association
-* belongs_to:item
+* belongs_to :item
 * belongs_to :saler, class_name: "User" <!-- ユーザーテーブルのidとitemsテーブルのsaler_idが紐づく -->
 * belongs_to :buyer, class_name: "User" <!-- ユーザーテーブルのidとitemsテーブルのbuyer_idが紐づく -->
